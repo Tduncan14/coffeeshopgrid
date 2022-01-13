@@ -29,6 +29,9 @@ body{
     font-family:'La Belle Aurore',cursive;
 }
 
+
+
+
 /* end of global */
 
 /* preloader */
@@ -295,4 +298,13 @@ body{
         left:50%;
     }
 
+}
+
+/* about */
+
+.about_img_item{
+    width:100%;
+    display:block;
+    
+    
 }

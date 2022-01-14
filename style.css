@@ -77,6 +77,21 @@ body{
     text-transform:capitalize;
 }
 
+
+.section-title-undeline{
+    background:var(--yellow);
+    width:5rem;
+    height:0.25rem;
+}
+
+
+.section-title-text{
+    letter-spacing:0.1rem;
+    line-height:1.5;
+    margin-top:1rem;
+    color:var(--grey);
+}
+
 /* end of global */
 
 /* preloader */
@@ -347,9 +362,35 @@ body{
 
 /* about */
 
+.about-container{
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows:auto 1fr;
+    grid-gap:2rem;
+}
+
 .about_img_item{
     width:100%;
     display:block;
+    height:100%;
+    border-radius:0.25;
+
+
+
+}
+
+
+@media screen and (min-width:768px){
+
+    .about-img-special{
+        order:-1;
+    }
+
+
+    .about-container{
+        grid-template-rows:1fr;
+    }
+
     
-    
+
 }

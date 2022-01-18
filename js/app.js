@@ -48,7 +48,13 @@ function eventListener(){
 
         if(value){
 
+            let customer = new Customer(name,lastname,email)
+        
+
+            
             ui.showFeedBack(' you will be able to get a free drink','success');
+            ui.addCustomer(customer);
+            ui.clearFields();
 
 
         }
@@ -175,6 +181,48 @@ UI.prototype.removeAlert = function (type){
 
 }
 
+
+// customer method
+UI.prototype.addCustomer = function(customer){
+
+    const images = [1,2,3,4,5];
+
+    let random = Math.floor(Math.random()*images.length);
+
+
+    const div = document.createElement('div');
+    div.classList.add('person');
+    div.innerHTML = `<img src="img/person-${random}.jpeg" alt="person" class="person_thumbnail" />
+    <h4 class="person_name">${customer.name}</h4>
+    <h4 class="person_last_name">${customer.lastname}</h4>`
+
+
+    document.querySelector('.drink_card_list').appendChild(div);
+
+
+
+    console.log(customer)
+    console.log(random)
+
+}
+
+
+// clear fields
+
+UI.prototype.clearFields = function(){
+
+    document.querySelector('.input_name').value = '';
+    document.querySelector('.input_lastname').value = '';
+    document.querySelector('.input_email').value = '';
+
+}
+
+
+function Customer (name,lastname,email){
+    this.name = name,
+    this.lastname = lastname,
+    this.email = email
+}
 
 
 const ui = new UI()

@@ -48,6 +48,8 @@ function eventListener(){
 
         if(value){
 
+            ui.showFeedBack(' you will be able to get a free drink','success');
+
 
         }
 
@@ -126,6 +128,10 @@ UI.prototype.showFeedBack = function(text,type){
 
 
     if(type === 'success'){
+        let feedBack = document.querySelector('.drink-form-feedback');
+        feedBack.classList.add('success')
+        feedBack.innerText = text;
+        this.removeAlert('success');
 
 
     }
@@ -147,12 +153,23 @@ UI.prototype.showFeedBack = function(text,type){
 
 UI.prototype.removeAlert = function (type){
 
-    setTimeout(() =>{
-        document.querySelector('.drink-form-feedback').classList.remove('error');
+   if(type==="error") {setTimeout(() =>{
+ document.querySelector('.drink-form-feedback').classList.remove('error')
 
 
 
-    }, 5000)
+    }, 5000)  }
+
+
+    else{setTimeout(() =>{
+        document.querySelector('.drink-form-feedback').classList.remove('success')
+       
+       
+       
+           }, 5000)}
+       
+
+
 
 
 

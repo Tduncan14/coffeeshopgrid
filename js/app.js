@@ -34,6 +34,33 @@ function eventListener(){
 
     })
 
+    // submit the forms
+    document.querySelector('.drink-form').addEventListener('submit',function(event){
+        event.preventDefault();
+
+        const name = document.querySelector('.input_name').value;
+        const lastname = document.querySelector('.input_lastname').value;
+        const email = document.querySelector('.input_email').value;
+
+
+        let value = ui.checkEmpty(name,lastname,email);
+
+
+        if(value){
+
+
+        }
+
+        else{
+
+            ui.showFeedBack('some from values are empty','error')
+
+        }
+
+        console.log(value)
+
+    })
+
 }
 
 
@@ -76,6 +103,62 @@ UI.prototype.videoControls = function(){
 
 
 }
+
+UI.prototype.checkEmpty = function(name,lastname,email){
+
+    let result;
+
+    if(name === '' || lastname === '' || email ===''){
+        result = false
+    }
+    else{
+        result = true
+    }
+
+
+    return result;
+
+}
+
+//  show feed back ui
+
+UI.prototype.showFeedBack = function(text,type){
+
+
+    if(type === 'success'){
+
+
+    }
+
+
+   else if(type === 'error'){
+        let feedBack = document.querySelector('.drink-form-feedback');
+        feedBack.classList.add('error')
+        feedBack.innerText = text;
+        this.removeAlert('error')
+   }
+
+
+
+
+}
+
+// remove alert
+
+UI.prototype.removeAlert = function (type){
+
+    setTimeout(() =>{
+        document.querySelector('.drink-form-feedback').classList.remove('error');
+
+
+
+    }, 5000)
+
+
+
+}
+
+
 
 const ui = new UI()
 

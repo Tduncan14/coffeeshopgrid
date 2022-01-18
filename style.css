@@ -442,7 +442,7 @@ body{
 
 
 }
-.input_name,.input_lastname,.input_email,.input-submit{
+.input_name,.input_lastname,.input_email,.input_submit{
     font-size:1rem;
     border-radius:0.5rem;
     padding:0.25rem 0.5rem;
@@ -451,5 +451,58 @@ body{
     border:none;
     outline:none;
 
+}
+
+.input_name::placeholder,.input_lastname::placeholder,.input_email::placeholder{
+
+    color:var(--darkBrown);
+    text-transform: capitalize;
 
 }
+
+
+.input_submit{
+    background:var(--yellow);
+    color:var(--black);
+    transition:all 0.5s linear;
+    cursor:pointer;
+    text-transform: uppercase;
+}
+
+
+.input_submit:hover{
+    opacity:0.8;
+}
+
+.drink_card_list{
+    display:grid;
+    grid-template-columns:100%;
+    grid-row-gap:2rem;
+}
+
+.person{
+    display:grid;
+    grid-template-columns:auto auto 1fr;
+    align-items:center;
+    text-align:left;
+    grid-gap:1rem;
+    border:0.1rem solid rgba(111,87,77,0.6);
+    padding:1rem;
+    border-radius:.5rem;
+    font-size:1.5rem;
+}
+
+
+.person_thumbnail{
+    border-radius:50%;
+    object-fit:cover;
+}
+
+
+@media screen and (min-width:768px){
+    .drink_card_list{
+        grid-template-columns: 1fr 1fr;
+        grid-gap:1rem;
+    }
+}
+

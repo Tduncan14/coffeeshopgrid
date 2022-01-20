@@ -564,6 +564,17 @@ body{
 
 
 /* grid for work section */
+
+@media screen and (min-width:576px){
+    .work-container{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        grid-gap:1rem;
+    }
+}
+
+
+
 /* end of work section */
 
 

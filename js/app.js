@@ -86,6 +86,13 @@ function eventListener(){
 
 
     )
+    // hide modal
+
+    document.querySelector('.work-modal_close').addEventListener(
+        'click',()=>{
+            ui.closeModal()
+        }
+    )
 
 }
 
@@ -259,6 +266,16 @@ UI.prototype.showModal = function(event){
 
 
 }
+
+// hide modal
+
+UI.prototype.closeModal = function(){
+    document.querySelector('.work-modal').classList.remove('work-modal-show');
+}
+
+
+
+// customer
 
 function Customer (name,lastname,email){
     this.name = name,

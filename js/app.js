@@ -73,19 +73,23 @@ function eventListener(){
 
     console.log(links,'this are the links')
 
-    links.forEach(l => {
+    links.forEach(item => (
 
-        l.addEventListener('click',(event)=>{
+    
 
+        item.addEventListener('click',function(event){
+            event.preventDefault()
+
+    
             ui.showModal(event)
+        }))
 
-        })
 
-
-    })
+    )
 
 }
 
+// constuctor function
 
 function UI(){
 
@@ -231,9 +235,27 @@ UI.prototype.clearFields = function(){
     document.querySelector('.input_email').value = '';
 
 }
-
+// show the modal
 UI.prototype.showModal = function(event){
+ console.log(event.target.parentElement);
 
+ if(event.target.parentElement.classList.contains('work-item_icon')){
+
+
+    let id = event.target.parentElement.dataset.id;
+
+
+
+    const modal = document.querySelector('.work-modal');
+    const modalItem = document.querySelector('.work-modal_item');
+
+
+    modal.classList.add('work-modal-show');
+
+    modalItem.style.backgroundImage = `url(./img/work-${id}.jpeg)`;
+
+   console.log(id);
+ }
 
 
 }

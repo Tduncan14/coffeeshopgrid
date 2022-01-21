@@ -69,6 +69,21 @@ function eventListener(){
 
     })
 
+    const links = document.querySelectorAll('.work-item_icon');
+
+    console.log(links,'this are the links')
+
+    links.forEach(l => {
+
+        l.addEventListener('click',(event)=>{
+
+            ui.showModal(event)
+
+        })
+
+
+    })
+
 }
 
 
@@ -217,6 +232,11 @@ UI.prototype.clearFields = function(){
 
 }
 
+UI.prototype.showModal = function(event){
+
+
+
+}
 
 function Customer (name,lastname,email){
     this.name = name,

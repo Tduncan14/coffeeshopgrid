@@ -624,9 +624,62 @@ body{
 /* end of work section */
 
 
+/* modal */
+
+.work-modal{
+    position:fixed;
+    background:rgba(0,0,0,0.5);
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:99;
+    display:grid;
+    justify-content:center;
+    align-items:center;
+}
+
+
+.work-modal_item{
+    background:url('./img/work-1.jpeg');
+    height:70vh;
+    width:80vw;
+    border:0.5rem solid var(--brightYellow);
+    border-radius: 0.4rem;
+}
+
+
+.work-modal_close{
+    position:fixed;
+    font-size:3rem;
+    color:var(--brightYellow);
+    bottom:5%;
+    right:5%;
+    transition:color 1s linear;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+    
+}
+
+.work-modal_close:hover{
+    color:red;
+}
+
+
+@media screen and (min-width:768px){
+
+    .work-modal_item{
+        width:80vh;
+        height:60vh;
+        background-position:cover;
+        background-repeat: no-repeat;
+
+    }
 
 
 
 
+}
 
-/* end of work section */
+/* end of modal */

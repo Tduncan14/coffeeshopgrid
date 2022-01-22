@@ -741,3 +741,22 @@ body{
         order:-1;
     }
 }
+
+
+@media screen and (min-width:992px){
+
+    .contact-info{
+       grid-template-columns:1fr;
+       order:0;
+    }
+
+    .contact-container{
+        display:grid;
+        grid-template-columns: 2fr 1fr;
+        grid-column-gap:2rem;
+    }
+
+    .contact-map{
+        align-self:center;
+    }
+}

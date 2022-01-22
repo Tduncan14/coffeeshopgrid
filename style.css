@@ -687,3 +687,57 @@ body{
 }
 
 /* end of modal */
+
+
+
+/* contact styling */
+
+
+.contact-container{
+    max-width:90vw;
+    margin: 0 auto;
+    display:grid;
+    grid-row-gap:1rem;
+
+}
+
+.contact-info{
+    display:grid;
+    justify-content:center;
+
+}
+
+.contact-item{
+    margin:1rem 0;
+    padding:0.5rem;
+}
+
+
+.contact-item_icon{
+    font-size:3rem;
+    color:var(--yellow);
+}
+
+
+.contact-item_title{
+    text-transform:uppercase;
+    letter-spacing:0.25rem;
+    font-style:italic;
+
+}
+
+
+.contact-item_text{
+    font-size:1rem;
+    text-transform:uppercase;
+    color:var(--grey);
+}
+
+
+@media screen and (min-width:768px){
+
+    .contact-info{
+        grid-template-columns:repeat(3,1fr);
+        order:-1;
+    }
+}
